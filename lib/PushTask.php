@@ -14,7 +14,7 @@ class PushTask {
       $exp_ts = time() + $lease_seconds;
       $exp_date = date('Y-m-d H:i:s', $exp_ts);
 
-      if($feed->namespaced) {
+      if($subscription->namespaced) {
         $prefix = 'hub.';
       } else {
         $prefix = '';
