@@ -1,11 +1,11 @@
 <?php $tz = 0; ?>
 <div class="narrow subscription-status">
 
-<? if($this->subscription->active): ?>
+<?php if($this->subscription->active): ?>
   <div class="bs bs-callout bs-callout-success">This subscription is active!</div>
-<? else: ?>
+<?php else: ?>
   <div class="bs bs-callout bs-callout-danger">This subscription is not active</div>
-<? endif; ?>
+<?php endif; ?>
 
 <h3>Subscription</h3>
 <table class="table">
@@ -29,18 +29,18 @@
     <td>Date Subscription was Confirmed</td>
     <td><?= format_date($this->subscription->date_confirmed, $tz) ?></td>
   </tr>
-  <? if($this->subscription->date_unsubscribed): ?>
+  <?php if($this->subscription->date_unsubscribed): ?>
     <tr>
       <td>Date Unsubscribed</td>
       <td><?= format_date($this->subscription->date_unsubscribed, $tz) ?></td>
     </tr>
-  <? endif; ?>
-  <? if($this->subscription->date_expires): ?>
+  <?php endif; ?>
+  <?php if($this->subscription->date_expires): ?>
     <tr>
       <td>Subscription Expiration</td>
       <td><?= format_date($this->subscription->date_expires, $tz) ?></td>
     </tr>
-  <? endif; ?>
+  <?php endif; ?>
 
 </table>
 
@@ -62,7 +62,7 @@
     <td>Last ping was successful?</td>
     <td><?= $this->subscription->last_ping_success ? 'Yes' : 'No' ?><br>(Subscriber must return 2xx on success)</td>
   </tr>
-  <? if($this->subscription->last_ping_success == 0): ?>
+  <?php if($this->subscription->last_ping_success == 0): ?>
     <tr>
       <td>Retrying ping in</td>
       <td>
@@ -70,7 +70,7 @@
         (Will be de-activated after 1 hour from first failed ping)
       </td>
     </tr>
-  <? endif; ?>
+  <?php endif; ?>
 </table>
 
 </div>

@@ -26,7 +26,7 @@
   </td>
 </tr>
 
-<? foreach($this->subscribers as $subscriber): ?>
+<?php foreach($this->subscribers as $subscriber): ?>
   <tr>
     <td colspan="2"><h4><?= $subscriber->callback_url ?></h4></td>
   </tr>
@@ -54,7 +54,7 @@
     <td>Last ping was successful?</td>
     <td><?= $subscriber->last_ping_success ? 'Yes' : 'No' ?><br>(Subscriber must return 2xx on success)</td>
   </tr>
-  <? if($subscriber->last_ping_success == 0): ?>
+  <?php if($subscriber->last_ping_success == 0): ?>
     <tr>
       <td>Retrying ping in</td>
       <td>
@@ -62,8 +62,8 @@
         (Will be de-activated after 1 hour from first failed ping)
       </td>
     </tr>
-  <? endif; ?>
-<? endforeach; ?>
+  <?php endif; ?>
+<?php endforeach; ?>
 
 </table>
 
